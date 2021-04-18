@@ -1,0 +1,23 @@
+OBJS	= main.o strlen.o rand.o
+SOURCE	= main.c strlen.c rand.c
+HEADER	= strlen.h rand.h
+OUT	= Makefile.out
+CC	 = gcc
+FLAGS	 = -g -c -Wall
+LFLAGS	 = 
+
+all: $(OBJS)
+	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
+
+main.o: main.c
+	$(CC) $(FLAGS) main.c 
+
+strlen.o: strlen.c
+	$(CC) $(FLAGS) strlen.c 
+
+rand.o: rand.c
+	$(CC) $(FLAGS) rand.c 
+
+
+clean:
+	rm -f $(OBJS) $(OUT)
